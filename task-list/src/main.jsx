@@ -6,7 +6,9 @@ import Header from './components/Header'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Header />
-    <Index />
+    <div className='font-mono'>
+      <Header />  
+      <Index />
+    </div>
   </StrictMode>,
 )
