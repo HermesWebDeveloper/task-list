@@ -10,7 +10,6 @@ function Header () {
                     <h2 className="text-5xl mx-2">To do List</h2>
                 </div>
             </div>
-            <h2>Cabeçalho</h2>
         </>
     )
 }
