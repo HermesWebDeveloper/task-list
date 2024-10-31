@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TaskList from "./TaskList";
+import Task from "./Task";
 
 
 function NewTask () {
@@ -30,15 +31,10 @@ function NewTask () {
     };
     
     function excluirTarefa(id) {
-        for(i=0;i<=tarefas.length;i++){
-            if (tarefas[i].id == id){
-                const novaLista = tarefas;
-                novaLista.splice(id, 1);
-                setTarefas(novaLista);  
-                break;
-            };
-        };
-    };
+        // Filtra a lista de tarefas para remover a tarefa com o id correspondente
+        const novaLista = tarefas.filter(tarefa => tarefa.id !== id);
+        setTarefas(novaLista);  
+    }
 
     return(
         <>
@@ -53,7 +49,16 @@ function NewTask () {
                 </form>
             </div>
             <hr className="border w-[550px] my-4 mx-auto"></hr>
-            <TaskList tarefas={tarefas}/>
+            <div className="mx-auto w-[550px]">
+                <h2>Lista</h2>
+                <div>
+                    <ul>
+                        {tarefas.map( (tarefa) => (
+                            <Task key={tarefa.id} tarefa={tarefa} excluirTarefa={excluirTarefa} tarefas={tarefas} setTarefas={setTarefas} id={tarefa.id}/>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </>
     )
 }
