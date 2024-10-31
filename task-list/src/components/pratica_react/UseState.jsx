@@ -3,6 +3,7 @@ import ContadorSimples from "./ContadorSimplex";
 import ContagemCliques from "./ContagemCliques";
 import InputText from "./InputText";
 import ListaTarefas from "./ListaTarefas";
+import Login from "./Login";
 
 
 function UseState() {
@@ -20,6 +21,8 @@ function UseState() {
             <AlterarTema />
             <hr className="border-t-2 border-gray-400"></hr>
             <ContagemCliques />
+            <hr className="border-t-2 border-gray-400"></hr>
+            <Login />
         </>
     )
 }

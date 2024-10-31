@@ -10,7 +10,6 @@ function TarefasPage () {
             <div className='font-mono'>
                 <Header />  
                 <NewTask />
-                <TaskList />
             </div>
         </>
     )

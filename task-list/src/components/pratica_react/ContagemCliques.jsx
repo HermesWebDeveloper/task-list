@@ -18,6 +18,7 @@ function ContagemCliques() {
     return(
         <>
             <h3 className="text-2xl font-bold">4. Contagem de Cliques por Botão</h3>
+            <p className="text-sm">Criar três botões, cada um contando seus próprios cliques.</p>
             <button className='border border-gray-600 py-1 px-2 my-2 rounded-lg' value={0} onClick={adicionarValor}>Botão 1</button>
             <span className="ml-2">{valores[0]}</span>
             <br></br>
