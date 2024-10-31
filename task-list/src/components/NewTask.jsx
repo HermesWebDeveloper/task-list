@@ -14,9 +14,30 @@ function NewTask () {
     function adicionarTarefa (event) {
         event.preventDefault();
         if (novaTarefa === '') return; 
-        setTarefas([...tarefas, novaTarefa]);
+
+        // Declarando o id
+        const id = tarefas.length + 1;
+
+        // Adicionando nova tarefa como objeto
+            setTarefas([...tarefas, {
+                id: id,
+                description: novaTarefa,
+                status: false,
+        }]);
+
+        // Limpando nova tarefa e, consequentemente, o input
         setNovaTarefa('');
-        console.log('Lista:' + tarefas);
+    };
+    
+    function excluirTarefa(id) {
+        for(i=0;i<=tarefas.length;i++){
+            if (tarefas[i].id == id){
+                const novaLista = tarefas;
+                novaLista.splice(id, 1);
+                setTarefas(novaLista);  
+                break;
+            };
+        };
     };
 
     return(
