@@ -1,11 +1,13 @@
 import { useState } from "react";
 import TaskList from "./TaskList";
 import Task from "./Task";
+import useLocalStorage from './useLocalStorage';
 
 
 function NewTask () {
 
-    const [tarefas, setTarefas] = useState([]);
+    // const [tarefas, setTarefas] = useState([]);
+    const [tarefas, setTarefas] = useLocalStorage('tarefas', []);
     const [novaTarefa, setNovaTarefa] = useState('');
 
     function handleChangeNovaTarefa(event) {

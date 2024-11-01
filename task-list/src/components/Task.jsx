@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 function Task ({id, tarefa, tarefas, setTarefas, excluirTarefa}) {   
 
-    const [isChecked, setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState(tarefa.status);
     
     function handleChangeCheckbox (event) {
         setIsChecked(event.target.checked)
@@ -22,6 +22,7 @@ function Task ({id, tarefa, tarefas, setTarefas, excluirTarefa}) {
                     type="checkbox" 
                     className="mr-2" 
                     value={isChecked}
+                    checked={isChecked}
                     onChange={handleChangeCheckbox}
                 ></input>
                 <span className={tarefa.status ? class1 : ''}>{tarefa.description}</span>
